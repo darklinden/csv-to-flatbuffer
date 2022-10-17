@@ -252,7 +252,11 @@ export function generate_fbs(): {
             if (!include_path) {
                 throw new Error(`结构体 ${name} 引用了不存在的类型 ${include}`);
             }
-            const include_relative_path = path.join(path.relative(fbs_dir, path.dirname(include_path.fbs)), path.basename(include_path.fbs));
+            let include_relative_path = path.join(path.relative(fbs_dir, path.dirname(include_path.fbs)), path.basename(include_path.fbs));
+            if (process.platform == 'win32' || process.platform == 'cygwin') {
+                // windows
+                include_relative_path = include_relative_path.replace('\\', '/');
+            }
             struct_fbs += `include "${include_relative_path}";\n`;
         }
 
@@ -278,7 +282,11 @@ export function generate_fbs(): {
             if (!include_path) {
                 throw new Error(`表 ${name} 引用了不存在的类型 ${include}`);
             }
-            const include_relative_path = path.join(path.relative(fbs_dir, path.dirname(include_path.fbs)), path.basename(include_path.fbs));
+            let include_relative_path = path.join(path.relative(fbs_dir, path.dirname(include_path.fbs)), path.basename(include_path.fbs));
+            if (process.platform == 'win32' || process.platform == 'cygwin') {
+                // windows
+                include_relative_path = include_relative_path.replace('\\', '/');
+            }
             table_fbs += `include "${include_relative_path}";\n`;
         }
 
