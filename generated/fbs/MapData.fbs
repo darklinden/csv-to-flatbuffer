@@ -1,0 +1,21 @@
+include "Vec3.fbs";
+namespace Configs;
+
+table MapDataRow {
+    id:int32; // ID 
+    name:string; // 地图名称 
+    hero1:Vec3; // 阵营1英雄站位 
+    fire1:Vec3; // 阵营1火站位 
+    light1:Vec3; // 阵营1光站位 
+    wind1:Vec3; // 阵营1风站位 
+    water1:Vec3; // 阵营1水站位 
+    hero2:Vec3; // 阵营2英雄站位 
+    fire2:Vec3; // 阵营2火站位 
+    light2:Vec3; // 阵营2光站位 
+    wind2:Vec3; // 阵营2风站位 
+    water2:Vec3; // 阵营2水站位 
+}
+table MapData {
+    rows:[MapDataRow];
+}
+root_type MapData;

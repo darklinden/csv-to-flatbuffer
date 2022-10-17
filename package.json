@@ -1,0 +1,15 @@
+{
+  "name": "csv-to-flatbuffer",
+  "version": "1.0.0",
+  "description": "此工具为了方便在游戏开发中，将 csv 配表数据，以 flatbuffer 的形式存储，并将表结构转为不同语言的 flatbuffer 代码，用于在工程中使用。",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx ts-node ./scripts/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "flatbuffers": "^2.0.7",
+    "ts-node": "^10.9.1"
+  }
+}

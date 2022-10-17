@@ -1,0 +1,5 @@
+#字段名,值,备注,
+UNSPECIFIED,0,未指定,
+Attack,1,攻击,
+HP,2,生命,
+Armor,3,护甲,
